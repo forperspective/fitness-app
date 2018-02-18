@@ -1,0 +1,36 @@
+
+https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html#content
+
+## This for android.bundle error with red screen
+	react-native start > /dev/null 2>&1 &
+	adb reverse tcp:8081 tcp:8081
+
+## need to run in other window
+	npm run start
+
+##
+	adb devices
+ 	adb reverse tcp:8081 tcp:8081
+	npm clean cache	
+
+## very important for sdk path
+make file in react folder in this path : android/local.properties
+and put this line inside (sdk.dir = /home/mustafa/Android/Sdk) 
+and also in (android/gradle.properties)
+
+
+###############
+use this command when get 
+inotify-add-watch(/home/cj/apps/react-native/my-app) -> The user limit on the total number of inotify watches was reached; increase the fs.inotify.max_user_watches sysctl
+command:
+echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+echo fs.inotify.max_queued_events=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+
+
+godaddy
+pm@mahacode.com
+pm-mahacode
+Mcmustafa123
+2408
